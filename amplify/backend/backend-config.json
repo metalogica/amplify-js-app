@@ -1,12 +1,12 @@
 {
 	"auth": {
-		"cognitoa3e27433": {
+		"amplifyjsapp886b56f6": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
 	},
 	"analytics": {
-		"cognitoa3e27433": {
+		"amplifyjsapp886b56f6": {
 			"service": "Pinpoint",
 			"providerPlugin": "awscloudformation"
 		}

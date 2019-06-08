@@ -8,22 +8,23 @@ console.log(awsconfig);
 
 // retrieve temporary AWS credentials and sign requests
 console.log(Auth.configure(awsconfig));
-debugger
+Auth.configure(awsconfig)
 // send analytics events to Amazon Pinpoint
 console.log(Analytics.configure(awsconfig));
+Analytics.configure(awsconfig)
 
-// const AnalyticsResult = document.getElementById('AnalyticsResult');
-// const AnalyticsEventButton = document.getElementById('AnalyticsEventButton');
-// let EventsSent = 0;
+const AnalyticsResult = document.getElementById('AnalyticsResult');
+const AnalyticsEventButton = document.getElementById('AnalyticsEventButton');
+let EventsSent = 0;
 
-// AnaltyicsEventButton.addEventListener('click', (event) => {
-//   const { aws_mobile_analytics_app_region, aws_mobile_analytics_app_id } = awsconfig;
+AnalyticsEventButton.addEventListener('click', (event) => {
+  const { aws_mobile_analytics_app_region, aws_mobile_analytics_app_id } = awsconfig;
 
-//   Analytics.record('Amplify Tutorial Event')
-//     .then((event) => {
-//       const url = `https://${aws_mobile_analytics_app_region}.console.aws.amazon.com/pinpoint/home/?region=${aws_mobile_analytics_app_region}#/apps/${aws_mobile_analytics_app_id}/analytics/events`;
-//       AnalyticsResult.innerHTML = '<p>Event Submitted. </p>';
-//       AnalyticsResult.innerHTML += '<p>Events sent: '+(++EventsSent)+'</p>';
-//       AnalyticsResult.innerHTML += '<a href="'+url+'" target="_blank">View Events on the Amazon Pinpoint Console</a>';
-//     });
-
+  Analytics.record('Amplify Tutorial Event')
+    .then((event) => {
+      const url = `https://${aws_mobile_analytics_app_region}.console.aws.amazon.com/pinpoint/home/?region=${aws_mobile_analytics_app_region}#/apps/${aws_mobile_analytics_app_id}/analytics/events`;
+      AnalyticsResult.innerHTML = '<p>Event Submitted. </p>';
+      AnalyticsResult.innerHTML += '<p>Events sent: '+(++EventsSent)+'</p>';
+      AnalyticsResult.innerHTML += '<a href="'+url+'" target="_blank">View Events on the Amazon Pinpoint Console</a>';
+    });
+})
