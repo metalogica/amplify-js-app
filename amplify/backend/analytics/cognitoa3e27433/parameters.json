@@ -1,0 +1,20 @@
+{
+    "appName": "cognitoa3e27433",
+    "roleName": "pinpointLambdaRoleb2b98c64",
+    "cloudWatchPolicyName": "cloudWatchPolicyb2b98c64",
+    "pinpointPolicyName": "pinpointPolicyb2b98c64",
+    "authPolicyName": "pinpoint_amplify_b2b98c64",
+    "unauthPolicyName": "pinpoint_amplify_b2b98c64",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
